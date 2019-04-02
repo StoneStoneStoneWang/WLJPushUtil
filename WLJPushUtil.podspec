@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "WLJPushUtil"
-s.version      = "0.0.1"
+s.version      = "0.0.2"
 s.summary      = "A Lib For hud."
 s.description  = <<-DESC
 WLJPushUtil一个对jpush的封装

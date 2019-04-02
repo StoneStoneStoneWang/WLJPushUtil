@@ -103,6 +103,7 @@ apsForProduction:true];
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         [JPUSHService handleRemoteNotification:userInfo];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:WLDidReceivePush object:nil userInfo: userInfo];
     // 需要执行这个方法，选择是否提醒用户，有 Badge、Sound、Alert 三种类型可以选择设置
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
 #endif
@@ -111,6 +112,7 @@ apsForProduction:true];
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     // Required
+    
 #if TARGET_IPHONE_SIMULATOR  //模拟器
     
     
@@ -120,6 +122,8 @@ apsForProduction:true];
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         [JPUSHService handleRemoteNotification:userInfo];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:WLDidHandlePush object:nil userInfo: userInfo];
+    
     completionHandler();  // 系统要求执行这个方法
 #endif
     
