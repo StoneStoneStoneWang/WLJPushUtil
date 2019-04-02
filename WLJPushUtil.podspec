@@ -2,8 +2,8 @@
 Pod::Spec.new do |s|
 
 s.name         = "WLJPushUtil"
-s.version      = "0.0.2"
-s.summary      = "A Lib For hud."
+s.version      = "0.0.3"
+s.summary      = "A Lib For jpush."
 s.description  = <<-DESC
 WLJPushUtil一个对jpush的封装
 DESC
@@ -14,7 +14,7 @@ s.author             = { "StoneStoneStoneWang" => "yuanxingfu1314@163.com" }
 s.platform     = :ios, "10.0"
 s.ios.deployment_target = "10.0"
 
-s.swift_version = '4.2'
+s.swift_version = '5.0'
 
 s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
